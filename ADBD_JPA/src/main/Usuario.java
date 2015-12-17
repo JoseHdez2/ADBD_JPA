@@ -14,6 +14,10 @@ public class Usuario {
     @Basic(optional=false)
     private String nombre;
     
+    public String toString(){
+    	return String.format("El usuario %s, con su DNI %d",this.nombre,this.dni);
+    }
+    
     /*
      * Getters y setters.
      */
