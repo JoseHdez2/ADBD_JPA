@@ -6,7 +6,7 @@
 			<attribute name="owner.project.facets" value="java"/>
 		</attributes>
 	</classpathentry>
-	<classpathentry kind="con" path="org.eclipse.jdt.USER_LIBRARY/MiLibreriaJPA">
+	<classpathentry exported="true" kind="con" path="org.eclipse.jdt.USER_LIBRARY/MiLibreriaJPA">
 		<attributes>
 			<attribute name="owner.project.facets" value="jpt.jpa"/>
 		</attributes>
