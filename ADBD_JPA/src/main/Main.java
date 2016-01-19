@@ -17,8 +17,8 @@ public class Main {
         Usuario usu = new Usuario();
         
         // Modificamos los datos del objeto/tupla.
-        usu.setDni(55555555);
-        usu.setNombre("Juan");
+        usu.setDni(20151217);
+        usu.setNombre("Ricardo");
         
         // Iniciamos la transacción.
         tx.begin(); 
