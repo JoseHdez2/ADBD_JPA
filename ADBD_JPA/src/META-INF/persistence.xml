@@ -1,11 +1,21 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <persistence version="2.1" xmlns="http://xmlns.jcp.org/xml/ns/persistence" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/persistence http://xmlns.jcp.org/xml/ns/persistence/persistence_2_1.xsd">
 	<persistence-unit name="ADBD_JPA" transaction-type="RESOURCE_LOCAL">
-	<class>classes.Consola</class>
-	<class>classes.Videojuego</class>
-	<class>classes.VideojuegoId</class>
-	<class>classes.Videojuego_Consola</class>
-	<class>classes.Videojuego_ConsolaId</class>
+		<class>model.Actualizacion</class>
+		<class>model.ActualizacionPK</class>
+		<class>model.Consola</class>
+		<class>model.Consulta</class>
+		<class>model.ConsultaPK</class>
+		<class>model.Dlc</class>
+		<class>model.DlcPK</class>
+		<class>model.Empresa</class>
+		<class>model.Genero</class>
+		<class>model.Mercado</class>
+		<class>model.Usuario</class>
+		<class>model.Videojuego</class>
+		<class>model.VideojuegoPK</class>
+		<class>model.VideojuegoConsola</class>
+		<class>model.VideojuegoConsolaPK</class>
 		<properties>
 			<property name="javax.persistence.jdbc.url" value="jdbc:mysql://localhost:3306/javabase"/>
 			<property name="javax.persistence.jdbc.user" value="java"/>
