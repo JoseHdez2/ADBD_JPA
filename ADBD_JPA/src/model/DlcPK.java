@@ -12,17 +12,18 @@ public class DlcPK implements Serializable {
 	//default serial version id, required for serializable classes.
 	private static final long serialVersionUID = 1L;
 
-	private String id;
+	@Column(name="id_dlc")
+	private String idDlc;
 
 	private String nombre_DLC;
 
 	public DlcPK() {
 	}
-	public String getId() {
-		return this.id;
+	public String getIdDlc() {
+		return this.idDlc;
 	}
-	public void setId(String id) {
-		this.id = id;
+	public void setIdDlc(String idDlc) {
+		this.idDlc = idDlc;
 	}
 	public String getNombre_DLC() {
 		return this.nombre_DLC;
@@ -40,14 +41,14 @@ public class DlcPK implements Serializable {
 		}
 		DlcPK castOther = (DlcPK)other;
 		return 
-			this.id.equals(castOther.id)
+			this.idDlc.equals(castOther.idDlc)
 			&& this.nombre_DLC.equals(castOther.nombre_DLC);
 	}
 
 	public int hashCode() {
 		final int prime = 31;
 		int hash = 17;
-		hash = hash * prime + this.id.hashCode();
+		hash = hash * prime + this.idDlc.hashCode();
 		hash = hash * prime + this.nombre_DLC.hashCode();
 		
 		return hash;

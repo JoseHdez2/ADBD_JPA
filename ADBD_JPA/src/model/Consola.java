@@ -3,7 +3,6 @@ package model;
 import java.io.Serializable;
 import javax.persistence.*;
 import java.util.Date;
-import java.util.List;
 
 
 /**
@@ -34,23 +33,6 @@ public class Consola implements Serializable {
 	@Lob
 	@Column(name="num_ventas")
 	private String numVentas;
-
-	//bi-directional many-to-many association to Mercado
-	@ManyToMany
-	@JoinTable(
-		name="VENTA_CONSOLA"
-		, joinColumns={
-			@JoinColumn(name="nombre_c")
-			}
-		, inverseJoinColumns={
-			@JoinColumn(name="nombre_m")
-			}
-		)
-	private List<Mercado> mercados;
-
-	//bi-directional many-to-many association to Videojuego
-	@ManyToMany(mappedBy="consolas")
-	private List<Videojuego> videojuegos;
 
 	public Consola() {
 	}
@@ -93,22 +75,6 @@ public class Consola implements Serializable {
 
 	public void setNumVentas(String numVentas) {
 		this.numVentas = numVentas;
-	}
-
-	public List<Mercado> getMercados() {
-		return this.mercados;
-	}
-
-	public void setMercados(List<Mercado> mercados) {
-		this.mercados = mercados;
-	}
-
-	public List<Videojuego> getVideojuegos() {
-		return this.videojuegos;
-	}
-
-	public void setVideojuegos(List<Videojuego> videojuegos) {
-		this.videojuegos = videojuegos;
 	}
 
 }

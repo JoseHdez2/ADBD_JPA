@@ -3,7 +3,6 @@ package model;
 import java.io.Serializable;
 import javax.persistence.*;
 import java.util.Date;
-import java.util.List;
 
 
 /**
@@ -23,10 +22,6 @@ public class Actualizacion implements Serializable {
 	@Column(name="fecha_actualizacion")
 	private Date fechaActualizacion;
 
-	//bi-directional many-to-one association to Dlc
-	@OneToMany(mappedBy="actualizacion")
-	private List<Dlc> dlcs;
-
 	public Actualizacion() {
 	}
 
@@ -44,28 +39,6 @@ public class Actualizacion implements Serializable {
 
 	public void setFechaActualizacion(Date fechaActualizacion) {
 		this.fechaActualizacion = fechaActualizacion;
-	}
-
-	public List<Dlc> getDlcs() {
-		return this.dlcs;
-	}
-
-	public void setDlcs(List<Dlc> dlcs) {
-		this.dlcs = dlcs;
-	}
-
-	public Dlc addDlc(Dlc dlc) {
-		getDlcs().add(dlc);
-		dlc.setActualizacion(this);
-
-		return dlc;
-	}
-
-	public Dlc removeDlc(Dlc dlc) {
-		getDlcs().remove(dlc);
-		dlc.setActualizacion(null);
-
-		return dlc;
 	}
 
 }

@@ -4,16 +4,16 @@ import java.io.Serializable;
 import javax.persistence.*;
 
 /**
- * The primary key class for the ACTUALIZACION database table.
+ * The primary key class for the DESARROLLA database table.
  * 
  */
 @Embeddable
-public class ActualizacionPK implements Serializable {
+public class DesarrollaPK implements Serializable {
 	//default serial version id, required for serializable classes.
 	private static final long serialVersionUID = 1L;
 
-	@Column(name="id_actualizacion")
-	private String idActualizacion;
+	@Column(name="nombre_e")
+	private String nombreE;
 
 	@Column(name="nombre_c")
 	private String nombreC;
@@ -24,13 +24,13 @@ public class ActualizacionPK implements Serializable {
 	@Column(name="version_v")
 	private String versionV;
 
-	public ActualizacionPK() {
+	public DesarrollaPK() {
 	}
-	public String getIdActualizacion() {
-		return this.idActualizacion;
+	public String getNombreE() {
+		return this.nombreE;
 	}
-	public void setIdActualizacion(String idActualizacion) {
-		this.idActualizacion = idActualizacion;
+	public void setNombreE(String nombreE) {
+		this.nombreE = nombreE;
 	}
 	public String getNombreC() {
 		return this.nombreC;
@@ -55,12 +55,12 @@ public class ActualizacionPK implements Serializable {
 		if (this == other) {
 			return true;
 		}
-		if (!(other instanceof ActualizacionPK)) {
+		if (!(other instanceof DesarrollaPK)) {
 			return false;
 		}
-		ActualizacionPK castOther = (ActualizacionPK)other;
+		DesarrollaPK castOther = (DesarrollaPK)other;
 		return 
-			this.idActualizacion.equals(castOther.idActualizacion)
+			this.nombreE.equals(castOther.nombreE)
 			&& this.nombreC.equals(castOther.nombreC)
 			&& this.nombreV.equals(castOther.nombreV)
 			&& this.versionV.equals(castOther.versionV);
@@ -69,7 +69,7 @@ public class ActualizacionPK implements Serializable {
 	public int hashCode() {
 		final int prime = 31;
 		int hash = 17;
-		hash = hash * prime + this.idActualizacion.hashCode();
+		hash = hash * prime + this.nombreE.hashCode();
 		hash = hash * prime + this.nombreC.hashCode();
 		hash = hash * prime + this.nombreV.hashCode();
 		hash = hash * prime + this.versionV.hashCode();

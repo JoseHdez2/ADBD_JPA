@@ -19,11 +19,6 @@ public class Dlc implements Serializable {
 
 	private float precio;
 
-	//bi-directional many-to-one association to Actualizacion
-	@ManyToOne
-	@JoinColumn(name="id", referencedColumnName="id")
-	private Actualizacion actualizacion;
-
 	public Dlc() {
 	}
 
@@ -41,14 +36,6 @@ public class Dlc implements Serializable {
 
 	public void setPrecio(float precio) {
 		this.precio = precio;
-	}
-
-	public Actualizacion getActualizacion() {
-		return this.actualizacion;
-	}
-
-	public void setActualizacion(Actualizacion actualizacion) {
-		this.actualizacion = actualizacion;
 	}
 
 }

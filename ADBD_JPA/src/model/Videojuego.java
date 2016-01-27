@@ -2,7 +2,6 @@ package model;
 
 import java.io.Serializable;
 import javax.persistence.*;
-import java.util.List;
 
 
 /**
@@ -18,29 +17,15 @@ public class Videojuego implements Serializable {
 	@EmbeddedId
 	private VideojuegoPK id;
 
+	@Column(name="id_genero")
+	private int idGenero;
+
 	@Column(name="num_jugadores")
 	private int numJugadores;
 
 	@Lob
 	@Column(name="num_ventas")
 	private String numVentas;
-
-	//bi-directional many-to-one association to Genero
-	@OneToMany(mappedBy="videojuego")
-	private List<Genero> generos;
-
-	//bi-directional many-to-many association to Consola
-	@ManyToMany
-	@JoinTable(
-		name="VIDEOJUEGO_CONSOLA"
-		, joinColumns={
-			@JoinColumn(name="version_v", referencedColumnName="version_v")
-			}
-		, inverseJoinColumns={
-			@JoinColumn(name="nombre_c")
-			}
-		)
-	private List<Consola> consolas;
 
 	public Videojuego() {
 	}
@@ -51,6 +36,14 @@ public class Videojuego implements Serializable {
 
 	public void setId(VideojuegoPK id) {
 		this.id = id;
+	}
+
+	public int getIdGenero() {
+		return this.idGenero;
+	}
+
+	public void setIdGenero(int idGenero) {
+		this.idGenero = idGenero;
 	}
 
 	public int getNumJugadores() {
@@ -67,36 +60,6 @@ public class Videojuego implements Serializable {
 
 	public void setNumVentas(String numVentas) {
 		this.numVentas = numVentas;
-	}
-
-	public List<Genero> getGeneros() {
-		return this.generos;
-	}
-
-	public void setGeneros(List<Genero> generos) {
-		this.generos = generos;
-	}
-
-	public Genero addGenero(Genero genero) {
-		getGeneros().add(genero);
-		genero.setVideojuego(this);
-
-		return genero;
-	}
-
-	public Genero removeGenero(Genero genero) {
-		getGeneros().remove(genero);
-		genero.setVideojuego(null);
-
-		return genero;
-	}
-
-	public List<Consola> getConsolas() {
-		return this.consolas;
-	}
-
-	public void setConsolas(List<Consola> consolas) {
-		this.consolas = consolas;
 	}
 
 }

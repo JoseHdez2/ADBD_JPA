@@ -2,7 +2,6 @@ package model;
 
 import java.io.Serializable;
 import javax.persistence.*;
-import java.util.List;
 
 
 /**
@@ -22,14 +21,6 @@ public class Mercado implements Serializable {
 	@Column(name="tipo_m")
 	private String tipoM;
 
-	//bi-directional many-to-many association to Consola
-	@ManyToMany(mappedBy="mercados")
-	private List<Consola> consolas;
-
-	//bi-directional many-to-many association to VideojuegoConsola
-	@ManyToMany(mappedBy="mercados")
-	private List<VideojuegoConsola> videojuegoConsolas;
-
 	public Mercado() {
 	}
 
@@ -47,22 +38,6 @@ public class Mercado implements Serializable {
 
 	public void setTipoM(String tipoM) {
 		this.tipoM = tipoM;
-	}
-
-	public List<Consola> getConsolas() {
-		return this.consolas;
-	}
-
-	public void setConsolas(List<Consola> consolas) {
-		this.consolas = consolas;
-	}
-
-	public List<VideojuegoConsola> getVideojuegoConsolas() {
-		return this.videojuegoConsolas;
-	}
-
-	public void setVideojuegoConsolas(List<VideojuegoConsola> videojuegoConsolas) {
-		this.videojuegoConsolas = videojuegoConsolas;
 	}
 
 }

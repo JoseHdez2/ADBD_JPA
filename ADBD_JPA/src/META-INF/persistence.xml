@@ -6,12 +6,18 @@
 		<class>model.Consola</class>
 		<class>model.Consulta</class>
 		<class>model.ConsultaPK</class>
+		<class>model.Desarrolla</class>
+		<class>model.DesarrollaPK</class>
 		<class>model.Dlc</class>
 		<class>model.DlcPK</class>
 		<class>model.Empresa</class>
 		<class>model.Genero</class>
 		<class>model.Mercado</class>
 		<class>model.Usuario</class>
+		<class>model.VentaConsola</class>
+		<class>model.VentaConsolaPK</class>
+		<class>model.VentaJuego</class>
+		<class>model.VentaJuegoPK</class>
 		<class>model.Videojuego</class>
 		<class>model.VideojuegoPK</class>
 		<class>model.VideojuegoConsola</class>

@@ -21,11 +21,6 @@ public class Genero implements Serializable {
 	@Column(name="nombre_g")
 	private String nombreG;
 
-	//bi-directional many-to-one association to Videojuego
-	@ManyToOne
-	@JoinColumn(name="id_genero", referencedColumnName="id_genero")
-	private Videojuego videojuego;
-
 	public Genero() {
 	}
 
@@ -43,14 +38,6 @@ public class Genero implements Serializable {
 
 	public void setNombreG(String nombreG) {
 		this.nombreG = nombreG;
-	}
-
-	public Videojuego getVideojuego() {
-		return this.videojuego;
-	}
-
-	public void setVideojuego(Videojuego videojuego) {
-		this.videojuego = videojuego;
 	}
 
 }

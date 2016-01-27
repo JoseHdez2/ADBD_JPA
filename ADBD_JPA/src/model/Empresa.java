@@ -3,7 +3,6 @@ package model;
 import java.io.Serializable;
 import javax.persistence.*;
 import java.util.Date;
-import java.util.List;
 
 
 /**
@@ -25,10 +24,6 @@ public class Empresa implements Serializable {
 	private Date fechaFundacion;
 
 	private String pais;
-
-	//bi-directional many-to-many association to VideojuegoConsola
-	@ManyToMany(mappedBy="empresas")
-	private List<VideojuegoConsola> videojuegoConsolas;
 
 	public Empresa() {
 	}
@@ -55,14 +50,6 @@ public class Empresa implements Serializable {
 
 	public void setPais(String pais) {
 		this.pais = pais;
-	}
-
-	public List<VideojuegoConsola> getVideojuegoConsolas() {
-		return this.videojuegoConsolas;
-	}
-
-	public void setVideojuegoConsolas(List<VideojuegoConsola> videojuegoConsolas) {
-		this.videojuegoConsolas = videojuegoConsolas;
 	}
 
 }
