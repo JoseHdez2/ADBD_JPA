@@ -1,9 +1,14 @@
 package main;
 
+import java.sql.Date;
+
 import javax.persistence.EntityManager;
 import javax.persistence.EntityManagerFactory;
 import javax.persistence.EntityTransaction;
 import javax.persistence.Persistence;
+
+import model.Consola;
+import model.Usuario;
 
 public class Main { 
 
@@ -13,19 +18,16 @@ public class Main {
         EntityManager em = emf.createEntityManager(); 
         EntityTransaction tx = em.getTransaction(); 
         
-        // Creamos un objeto (tupla).
-        Usuario usu = new Usuario();
+        Consola c = new Consola();
         
-        // Modificamos los datos del objeto/tupla.
-        usu.setDni(20151217);
-        usu.setNombre("Ricardo");
+        c.setNombreC("Wii U");
         
         // Iniciamos la transacción.
         tx.begin(); 
         try { 
         	// Se mapea el objeto a la tabla (se crea la tupla si no existia)
         	// Los cambios en Java afectarán al MySQL y viceversa.
-            em.persist(usu); 
+            em.persist(c); 
             // Commiteamos los cambios, de la misma forma que se haria en SQL puro.
             tx.commit(); 
         } catch(Exception e) {

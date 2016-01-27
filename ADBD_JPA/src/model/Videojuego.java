@@ -25,6 +25,10 @@ public class Videojuego implements Serializable {
 	@Column(name="num_ventas")
 	private String numVentas;
 
+	//bi-directional many-to-one association to Genero
+	@OneToMany(mappedBy="videojuego")
+	private List<Genero> generos;
+
 	//bi-directional many-to-many association to Consola
 	@ManyToMany
 	@JoinTable(
@@ -37,10 +41,6 @@ public class Videojuego implements Serializable {
 			}
 		)
 	private List<Consola> consolas;
-
-	//bi-directional many-to-one association to Genero
-	@OneToMany(mappedBy="videojuego")
-	private List<Genero> generos;
 
 	public Videojuego() {
 	}
@@ -69,14 +69,6 @@ public class Videojuego implements Serializable {
 		this.numVentas = numVentas;
 	}
 
-	public List<Consola> getConsolas() {
-		return this.consolas;
-	}
-
-	public void setConsolas(List<Consola> consolas) {
-		this.consolas = consolas;
-	}
-
 	public List<Genero> getGeneros() {
 		return this.generos;
 	}
@@ -97,6 +89,14 @@ public class Videojuego implements Serializable {
 		genero.setVideojuego(null);
 
 		return genero;
+	}
+
+	public List<Consola> getConsolas() {
+		return this.consolas;
+	}
+
+	public void setConsolas(List<Consola> consolas) {
+		this.consolas = consolas;
 	}
 
 }
