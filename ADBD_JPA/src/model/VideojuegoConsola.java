@@ -62,4 +62,7 @@ public class VideojuegoConsola implements Serializable {
 		this.pegi = pegi;
 	}
 
+	public String toString(){
+		return String.format("El juego que se llama %s, para la consola %s", getId().getNombreV(), getId().getNombreC());
+	}
 }

@@ -23,7 +23,7 @@
 		<class>model.VideojuegoConsola</class>
 		<class>model.VideojuegoConsolaPK</class>
 		<properties>
-			<property name="javax.persistence.jdbc.url" value="jdbc:mysql://localhost:3306/javabase"/>
+			<property name="javax.persistence.jdbc.url" value="jdbc:mysql://localhost:3306/videojuegos"/>
 			<property name="javax.persistence.jdbc.user" value="java"/>
 			<property name="javax.persistence.jdbc.password" value="password"/>
 			<property name="javax.persistence.jdbc.driver" value="com.mysql.jdbc.Driver"/>
